@@ -31,7 +31,7 @@ let is_hypotenuse (n: int): bool =
   func_a 1
   
 
-let drop_leading (k: int) (l: int list): int list = 
+let rec drop_leading (k: int) (l: int list): int list = 
   match l with
   | x :: xs when x = k -> drop_leading k xs
   | _ -> l
