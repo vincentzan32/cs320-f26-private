@@ -1,18 +1,16 @@
 (* i used ai to help me with syntax and write parts of the code that didn't make sense to me, i first wrote most of the functions in python then translated parts i was unsure about*)
 
-let taxicab n =
+let taxicab (n : int) : int =
   let cube x = x * x * x in
   let rec inner a b =
     let s = cube a + cube b in
-    match compare s n with
-    | 0 -> 1 + inner a (b + 1)
-    | c when c < 0 -> inner a (b + 1)
-    | _ -> 0
+    if s = n then 1 + inner a (b + 1)
+    else if s < n then inner a (b + 1)
+    else 0
   in
   let rec outer a =
-    match compare (2 * cube a) n with
-    | c when c > 0 -> 0
-    | _ -> inner a a + outer (a + 1)
+    if 2 * cube a > n then 0
+    else inner a a + outer (a + 1)
   in
   outer 1
 
