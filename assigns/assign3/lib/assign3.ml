@@ -1,3 +1,7 @@
+(*
+AI Use Disclosure: For the OCaml exercises (nub and split_by_ws'), I wrote initial attempts and then used Claude (Anthropic) to check my work. Claude also provided example implementations, which I compared against my own, asked follow-up questions about, and used to refine my final solutions, including verifying that they only use functions allowed by Stdlib320.
+*)
+
 
 let rec remove_key a b =
   match b with
